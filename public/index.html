@@ -61,8 +61,16 @@
           </p>
   </div>
   
+  <div id="login">
+    <form id="loginForm">
+      <fieldset id="loginFS">
+
+      </fieldset>
+    </form>
+  </div>
+
   <div id="CharSelect" class="CharSelect">
-    <p id = "selectChar" class="selectCharTitle">Who are you?</p>
+    <p id = "selectChar" class="selectCharTitle">Who am I today?</p>
     <p class="loadChar"> 
       <input type="button" id="testChar" value="Make Test Character">
       <label> <input type="radio" id="curtisPlay" name="gender" value="Curtis"> Curtis </label>
@@ -84,6 +92,7 @@
     <button id="showCharSheet" onclick="showPage('CharSheet')"> Show Character Sheet</button>
   </div>
   
+  <!-- Character Sheet -->
   <div id="charSheet" >
   <section class="charsheet">
     <header>
@@ -100,15 +109,10 @@
             <p name="background" id="background"></p>
             <label for="background">Background</label>
           </li>
-          <li>
-            <label for="playername">player Name</label><p name="playername" id="Name"></p>
-          </li>
-          <li>
-            <label for="race">Race</label><p name="race" id="race">Human</p>
-          </li>
-          <li>
-              <label for="showDocs">Reference Documents</label><button id="showDocs" onclick="showDocs()"> Need Help? </button>
-          </li>
+          <li>           <label for="playername">Player Name</label>         <p name="playername" id="Name"></p>          </li>
+          <li>           <label for="race">Race</label><p name="race" id="race">Human</p>         </li>
+          <li>      
+            <label for="showDocs">Reference Documents</label><button id="showDocs" onclick="showDocs()"> Need Help? </button>          </li>
           <li>
             <label for="alignment">Lock/Unlock</label>
             <button id="lockSheet" onclick="lockSheet(true)">Lock Sheet</button>
@@ -118,7 +122,8 @@
       </section>
     </header>
     <main>
-      <section>
+      <!-- Left Side Area -->
+      <section> 
         <section class="attributes">
           <div class="scores">
             <ul>

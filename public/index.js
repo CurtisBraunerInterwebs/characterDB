@@ -103,9 +103,23 @@ function init () {
                 name:{
                     'name':'name',
                     'attr':{
-                        'str':
+                        'str':''
                     }
                 }
             })
+        }
+        var characters = [];
+        function listCharacters () {
+          get(ref(db, '/characters')).then((snapshot) => {
+            if (snapshot.exists()) {
+              console.log(snapshot);
+              let character;
+              var charList = snapshot;
+              for(let key in charList) {
+                character = charList[key];
+                
+              }
+            }
+          })
         }
 }
