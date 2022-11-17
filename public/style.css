@@ -1,4 +1,17 @@
-section {
+.attr-card input {
+width: 100;
+}
+.attr-card .card-body{
+  align-self: center;
+}
+
+.saves .strSvMod input {
+  width: 100;
+}
+
+
+
+/* section {
     display: flex;
 }
 .charname {
@@ -93,7 +106,7 @@ section {
   
   
   div.skill_list ul li {
-    font-size: 25;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     list-style-type:none;
     align-content: center;
@@ -101,7 +114,7 @@ section {
   }
   
   div.skill_list ul span {
-      font-size: 15;
+      font-size: 15px;
       font-family: monospace; 
       border-radius: 10px;
       border: 1px;
@@ -144,7 +157,7 @@ section {
   }
   
   section.charsheet div.textblock {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -194,7 +207,7 @@ section {
     font-size: 12px;
   }
   section.charsheet header {
-    display: -webkit-box;
+    
     display: flex;
     align-content: stretch;
     -webkit-box-align: stretch;
@@ -207,7 +220,7 @@ section {
     padding: 5px 0;
     background-color: #eee;
     width: 30%;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -227,7 +240,7 @@ section {
   }
   section.charsheet header section.charname button {
       margin: 0px 20px 0px 20px;
-      width:flex;
+      display:flex;
   }
   section.charsheet header section.misc {
     width: 70%;
@@ -238,13 +251,13 @@ section {
   }
   section.charsheet header section.misc ul {
     padding: 10px 0px 5px 0px;
-    display: -webkit-box;
+    
     display: flex;
     flex-wrap: wrap;
   }
   section.charsheet header section.misc ul li {
     width: 33.33333%;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -258,7 +271,7 @@ section {
     border-bottom: 1px solid #ddd;
   }
   section.charsheet main {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-pack: justify;
             justify-content: space-between;
@@ -271,7 +284,7 @@ section {
     border: 1px solid black;
     border-left: 0;
     text-align: center;
-    padding-top:4;
+    padding-top:4px;
   }
   section.charsheet main div.label-container > label {
     left: 0;
@@ -282,7 +295,7 @@ section {
   }
   section.charsheet main > section {
     width: 32%;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -290,7 +303,7 @@ section {
   }
   section.charsheet main > section section.attributes {
     width: 100%;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -311,7 +324,7 @@ section {
     padding-top: 5px
   }
   section.charsheet main > section section.attributes div.scores ul {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -326,7 +339,7 @@ section {
     background-color: white;
     border: 1px solid black;
     text-align: center;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -370,7 +383,7 @@ section {
   
   
   section.charsheet main > section section.attributes div.attr-applications div.inspiration {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -391,7 +404,7 @@ section {
   
   }
   section.charsheet main > section section.attributes div.attr-applications div.proficiencybonus {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -425,7 +438,7 @@ section {
     font-weight: bold;
   }
   section.charsheet main > section section.attributes div.attr-applications div.list-section ul li {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-align: center;
             align-items: center;
@@ -468,7 +481,7 @@ section {
   }
   section.charsheet main > section div.passive-perception {
     position: static;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -490,7 +503,7 @@ section {
       border-radius: 10px;
       border: 1px solid black;
       padding: 10px;
-      resize: auto;
+      
       overflow: hidden;
       height: auto;
       padding-bottom: 0px;
@@ -502,7 +515,7 @@ section {
       margin-top: 3px;
       margin-left: 3px;
       border:none;
-      border-radius: none;
+      /* border-radius: none; 
       padding: 4px 0;
       font-weight: bold;
   }
@@ -515,7 +528,7 @@ section {
   
   section.charsheet main section.combat {
     background-color: #eee;
-    display: -webkit-box;
+    
     display: flex;
     flex-wrap: wrap;
     border-radius: 10px;
@@ -527,7 +540,7 @@ section {
     flex-basis: 33.333%;
   }
   section.charsheet main section.combat > div.armorclass > div, section.charsheet main section.combat > div.initiative > div, section.charsheet main section.combat > div.speed > div {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -575,7 +588,7 @@ section {
     border-radius: 10px 10px 0 0;
   }
   section.charsheet main section.combat > div.hp > div.regular > div.max {
-    display: -webkit-box;
+    
     display: flex;
     justify-content: space-around;
     -webkit-box-align: baseline;
@@ -594,7 +607,7 @@ section {
     text-align: center;
   }
   section.charsheet main section.combat > div.hp > div.regular > div.current {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -618,7 +631,7 @@ section {
     margin-top: 0;
     border: 1px solid black;
     border-radius: 0 0 10px 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -650,14 +663,14 @@ section {
     margin: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
   }
   section.charsheet main section.combat > div.hitdice > div > div.total {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-align: baseline;
             align-items: baseline;
@@ -684,7 +697,7 @@ section {
   section.charsheet main section.combat > div.hitdice > div > div.remaining {
     -webkit-box-flex: 1;
             flex: 1;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -696,7 +709,7 @@ section {
     font-size: 10px;
   }
   section.charsheet main section.combat > div.hitdice > div > div.remaining p {
-    font-size: 20;
+    font-size: 20px;
     text-align: center;
     border: 0;
     -webkit-box-flex: 1;
@@ -707,7 +720,7 @@ section {
     background: white;
     border: 1px solid black;
     border-radius: 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -717,10 +730,10 @@ section {
     text-align: center;
   }
   section.charsheet main section.combat > div.deathsaves > div > div.label label {
-    font-size: px;
+    font-size: 10px;
   }
   section.charsheet main section.combat > div.deathsaves > div > div.marks {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-flex: 1;
             flex: 1;
@@ -732,8 +745,8 @@ section {
       font-size: 20px;
   }
   section.charsheet main section.combat > div.deathsaves > div > div.marks div.deathsuccesses, section.charsheet main section.combat > div.deathsaves > div > div.marks div.deathfails {
-    /* display: -webkit-box;
-    display: flex; */
+    /* 
+    display: flex; 
     margin: auto;
     -webkit-box-align: center;
             align-items: center;
@@ -769,7 +782,7 @@ section {
   }
   section.charsheet main section.attacksandspellcasting > div {
     margin: 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -804,7 +817,7 @@ section {
   }
   section.charsheet main section.equipment > div {
     padding: 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -812,7 +825,7 @@ section {
     flex-wrap: wrap;
   }
   section.charsheet main section.equipment > div > div.money ul {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -822,7 +835,7 @@ section {
     height: 100%;
   }
   section.charsheet main section.equipment > div > div.money ul > li {
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-align: center;
             align-items: center;
@@ -874,7 +887,7 @@ section {
   }
   section.charsheet main section.flavor div.features {
     background: white;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -915,7 +928,7 @@ section {
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    display: -webkit-box;
+    
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -931,4 +944,4 @@ section {
     font-size: larger;
     display:block;
     margin-block-start: 0em;
-  }
+  } */
