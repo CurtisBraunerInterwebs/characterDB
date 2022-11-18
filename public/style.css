@@ -1,12 +1,23 @@
 .attr-card input {
-width: 100;
+width: 10rem;
+height:10 rem;
 }
 .attr-card .card-body{
   align-self: center;
 }
 
+.saves .svMod {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.attr-card .card-body input {
+  height: 15rem;
+}
+
 .saves .strSvMod input {
-  width: 100;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 
