@@ -22,6 +22,11 @@ const firebaseConfig = {
   measurementId: "G-G3B631FPFE"
 };
 
+window.addEventListener('DOMContentLoaded', function () {
+  init();
+  
+});
+
 // Initialize Firebase
 function init () {
 
@@ -110,6 +115,7 @@ function init () {
                 }
             })
         }
+
         var characters = [];
         function listCharacters () {
           get(ref(db, '/characters')).then((snapshot) => {
@@ -123,5 +129,9 @@ function init () {
               }
             }
           })
+        }
+
+        function clickToRoll (id) {
+          var elem = document.getElementById(id);
         }
 }

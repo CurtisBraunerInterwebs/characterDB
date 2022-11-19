@@ -1,26 +1,59 @@
 .attr-card input {
-width: 10rem;
-height:10 rem;
+width: 5rem;
+height:5rem;
 }
 .attr-card .card-body{
   align-self: center;
 }
 
-.saves .svMod {
-  width: 2.5rem;
-  height: 2.5rem;
+textarea {
+  width: 100%;
 }
 
-.attr-card .card-body input {
-  height: 15rem;
+.saves .card-body .list-group-item {
+  padding: .2rem;
 }
 
-.saves .strSvMod input {
-  width: 2.5rem;
-  height: 2.5rem;
+.charname {
+  align-self: center;
+  font-size: x-large;
 }
 
+.hitdice .total span {
+  width: 79px;
+}
 
+.deathSvName {
+  width: 79;
+}
+
+.deathsaves span{
+  padding: .2rem;
+}
+
+.remainingHD {
+  padding: .5rem;
+}
+
+.saves .card-body {
+  padding: .3rem
+}
+
+.skills .list-group-item {
+  padding: .2rem;
+}
+
+.skills .list-group-item .colms {
+  padding: .2rem;
+}
+
+.skill-name {
+  width: 87.5%;
+} 
+
+.deathsuccesses {
+  margin-bottom: .3rem;
+}
 
 /* section {
     display: flex;
