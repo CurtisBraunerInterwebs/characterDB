@@ -57,7 +57,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="strCardMod"></h5>
-                    <input class="card-text" id="strCardScore"></p>
+                    <input class="card-text attr-Num" id="strCardScore"></p>
                   </div>
                 </div>
                 <div class="card attr-card" id="dexCard">
@@ -66,7 +66,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="dexCardMod"></h5>
-                    <input class="card-text" id="dexCardScore"></p>
+                    <input class="card-text attr-Num" id="dexCardScore"></p>
                   </div>
                 </div>
                 <div class="card attr-card" id="conCard">
@@ -75,16 +75,16 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="conCardMod"></h5>
-                    <input class="card-text" id="conCardScore"></p>
+                    <input class="card-text attr-Num" id="conCardScore"></p>
                   </div>
                 </div>
                 <div class="card attr-card" id="intCard">
-                  <div class="card-header">
+                  <div class="card-header ">
                     Intelligence
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="intCardMod"></h5>
-                    <input class="card-text" id="intCardScore"></p>
+                    <input class="card-text attr-Num" id="intCardScore"></p>
                   </div>
                 </div>
                 <div class="card attr-card" id="wisCard">
@@ -93,7 +93,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="wizCardMod"></h5>
-                    <input class="card-text" id="wizCardScore"></p>
+                    <input class="card-text attr-Num" id="wizCardScore"></p>
                   </div>
                 </div>
                 <div class="card attr-card" id="chaCard">
@@ -102,7 +102,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="chaCardMod"></h5>
-                    <input class="card-text" id="chaCardScore"></p>
+                    <input class="card-text attr-Num" id="chaCardScore"></p>
                   </div>
                 </div>
               </div>
@@ -124,46 +124,46 @@
                 <div class="card-header">Saving Throws</div>
                 <div class="card-body g-0">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+                    <li class="list-group-item strSvCard">
                       <div class="input-group" >
                         <span class="svProChk input-group-text col-3"><input name="Strength-save-prof" type="checkbox" class="form-check-input "/></span>
                         <!-- <div class="svMod "><input name="Strength-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9">Strength <span class="badge position-absolute end-0 bg-danger">+2</span></span>
+                        <span class="input-group-text col-9">Strength <span class="badge position-absolute end-0 bg-danger strSvMod">+2</span></span>
                       </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item dexSvCard">
                       <div class="input-group" >
                         <div class="svProChk input-group-text col-3"><input name="Dexterity-save-prof" type="checkbox" class="form-check-input"/></div>
                         <!-- <div class="svMod "><input name="Dexterity-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9" for="Dexterity-save-prof">Dexterity <span class="badge position-absolute end-0 bg-danger">+2</span> </span>
+                        <span class="input-group-text col-9" for="Dexterity-save-prof">Dexterity <span class="badge position-absolute end-0 bg-danger dexSvMod">+2</span> </span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
                         <div class="svProChk input-group-text col-3"><input name="Constitution-save-prof" type="checkbox" class="form-check-input "/></div>
                         <!-- <div class="svMod "><input name="Constitution-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9">Constitution <span class="badge position-absolute end-0 bg-danger">+5</span></span>
+                        <span class="input-group-text col-9">Constitution <span class="badge position-absolute end-0 bg-danger conSvMod">+5</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
                         <div class="svProChk input-group-text col-3"><input name="Intelligence-save-prof" type="checkbox" class="form-check-input "/></div>
                         <!-- <div class="svMod "><input name="Intelligence-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9">Intelligence <span class="badge position-absolute end-0 bg-danger">+3</span></span>
+                        <span class="input-group-text col-9">Intelligence <span class="badge position-absolute end-0 bg-danger intSvMod ">+3</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
                         <div class="svProChk input-group-text col-3"><input name="Wisdom-save-prof" type="checkbox" class="form-check-input" /></div>
                         <!-- <div class="svMod "><input name="Wisdom-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9">Wisdom <span class="badge position-absolute end-0 bg-danger">+2</span></span>
+                        <span class="input-group-text col-9">Wisdom <span class="badge position-absolute end-0 bg-danger wisSvMod">+2</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
                         <div class="svProChk input-group-text col-3"><input name="Charisma-save-prof" type="checkbox" class="form-check-input "/></div>
                         <!-- <div class="svMod "><input name="Charisma-save" placeholder="+0" type="text" class="form-control"/></div> -->
-                        <span class="input-group-text col-9">Charisma <span class="badge position-absolute end-0 bg-danger">+4</span></span>
+                        <span class="input-group-text col-9">Charisma <span class="badge position-absolute end-0 bg-danger chaSvMod">+4</span></span>
                       </div>
                     </li>
                   </ul>

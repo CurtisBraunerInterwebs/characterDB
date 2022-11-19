@@ -105,12 +105,138 @@ function init () {
             admin(false);
           }
 
+          var testCharacter = {
+            'name':'name',
+            'race':'human',
+            
+            'attr':{
+              'strength':{
+                'score': 10,
+                'save':false,
+              },
+              'dexterity': {
+                'score': 10,
+                'save':false,
+              },
+              'constitution': {
+                'score': 10,
+                'save':false,
+              },
+              'intelligence': {
+                'score': 10,
+                'save':false,
+              },
+              'wisdom':{
+                'score': 10,
+                'save':false,
+              },
+              'charisma':{
+                'score': 10,
+                'save':false,
+              },
+            },
+            'skills': {
+              'acrobatics':{
+                'pro':false,
+                'expert':false,
+                'attr':'strength'
+              },
+              'animal handling':{
+                'pro':false,
+                'expert':false,
+                'attr':'wisdom'
+              },
+              'arcana':{
+                'pro':false,
+                'expert':false,
+                'attr':'intelligence'
+              },
+              'athletics':{
+                'pro':false,
+                'expert':false,
+                'attr':'strength'
+              },
+              'deception':{
+                'pro':false,
+                'expert':false,
+                'attr':'charisma'
+              },
+              'history':{
+                'pro':false,
+                'expert':false,
+                'attr':'intelligence'
+              },
+              'Insight':{
+                'pro':false,
+                'expert':false,
+                'attr':'wisdom'
+              },
+              'Intimidation':{
+                'pro':false,
+                'expert':false,
+                'attr':'charisma'
+              },
+              'Medicine':{
+                'pro':false,
+                'expert':false,
+                'attr':'wisdom'
+              },
+              'Nature':{
+                'pro':false,
+                'expert':false,
+                'attr':'intelligence'
+              },
+              'Perception':{
+                'pro':false,
+                'expert':false,
+                'attr':'wisdom'
+              },
+              'Performance':{
+                'pro':false,
+                'expert':false,
+                'attr':'charisma'
+              },
+              'Persuasion':{
+                'pro':false,
+                'expert':false,
+                'attr':'charisma'
+              },
+              'Religion':{
+                'pro':false,
+                'expert':false,
+                'attr':'intelligence'
+              },
+              'Sleight of hand':{
+                'pro':false,
+                'expert':false,
+                'attr':'dexterity'
+              },
+              'Stealth':{
+                'pro':false,
+                'expert':false,
+                'attr':'dexterity'
+              },
+              'Survival':{
+                'pro':false,
+                'expert':false,
+                'attr':'wisdom'
+              },
+            },
+            'ac':15,
+            'speed':30,
+
+          }
+
+
+        
         function upload (name){
+          var attrS = document.getElementsByClassName('card-text attr-Num');
+          console.log(attrS);
             set(ref(db, '/charcters'), {
                 name:{
-                    'name':'name',
+                    'name':'me',
                     'attr':{
-                        'str':''
+                        'str':'10'
                     }
                 }
             })
@@ -130,6 +256,8 @@ function init () {
             }
           })
         }
+
+        listCharacters();
 
         function clickToRoll (id) {
           var elem = document.getElementById(id);
