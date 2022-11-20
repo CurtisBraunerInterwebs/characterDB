@@ -108,7 +108,12 @@ function init () {
           var testCharacter = {
             'name':'name',
             'race':'human',
-            
+            'classes':{
+              'multi':false,
+              'class1':'fighter',
+              'subclass1':'Samurai',
+              'level1':4,
+            },
             'attr':{
               'strength':{
                 'score': 10,
@@ -224,23 +229,258 @@ function init () {
             },
             'ac':15,
             'speed':30,
+            'background':'sailor',
+            'alignment':'Chaotic Good',
+            'experience':4000,
+            'hitDice':[
+              10
+            ],
+            'attacks':[
+              {
+                'name':'Longsword',
+                'toHit':4,
+                'dmg':{'bonus':2, 'dmgDice':'d8','dmgDiceNum':1},
+                'notes':'nothing special about this'
+              },
+              {
+                'name':'Handaxe',
+                'toHit':4,
+                'dmg':{'bonus':2, 'dmgDice':'d6','dmgDiceNum':2},
+                'notes':'this a handaxe.  Like Gimli\'s'
+              },
+              {
+                'name':'Longbow',
+                'toHit':2,
+                'dmg':{'bonus':1, 'dmgDice':'d8','dmgDiceNum':2},
+                'notes':'Short/Long = 120/300'
+              }
+            ],
+            'attackNotes':'Nothing to note here',
+            'deathSaves':[1,2],
+            'Other Proficiencies':{
+              'langs':['Common','Elvish'],
+              'instruments':[],
+              'tools':['Brewer\'s', 'Carpenter\'s'],
+              'other':['Land Vehicles']
+            },
+            'appearance':{
+              'age':'20',
+              'height':'6ft 2in',
+              'weight':'220lbs',
+              'eyes':'blue',
+              'skin':'peachy',
+              'hair':'Dirty Blonde with a Scrappy Beard'
+            },'spellcasting':{'attr':'none','spellSV':'spellAtkBonus','spellsKNOW':['Nothing Yet']},
 
+          }
+          
+          function tempCharacter() {
+            let tempCha = gatherChaInfo();
+            set(ref(db,'/characters/'),{
+              'temporary':tempCha
+            }
+            );  
           }
 
 
-        
-        function upload (name){
-          var attrS = document.getElementsByClassName('card-text attr-Num');
-          console.log(attrS);
-            set(ref(db, '/charcters'), {
-                name:{
-                    'name':'me',
-                    'attr':{
-                        'str':'10'
-                    }
-                }
-            })
+        function tempUpload () {
+          set(ref(db,'/character/'),{
+            'temp':  testCharacter
+          });
         }
+
+        var charName = document.getElementById('charName').value;
+
+        function upload (){
+          var attrS = document.getElementsByClassName('card-text attr-Num');
+          var currCharacter = gatherChaInfo();
+          console.log(attrS);
+            update(ref(db, '/charcters/'), { currCharacter  });
+        }
+        document.getElementById('testUpload').addEventListener('click',gatherChaInfo('temp'));
+        document.getElementById('uploadBtn').addEventListener('click',gatherChaInfo(charName));
+
+        function gatherChaInfo(name) {
+          var pull = document.getElementById;
+          if (name = 'test') {
+          set(ref(db,'/character/'),{
+            'temp':  testCharacter
+          });
+          } else if (name="") {
+            alert('Please Enter the Characters Name');
+            document.getElementById('charNameSection').style.background = "red";
+          } else {
+              var chaToUpload = {
+                'name':pull('charName').value,
+                'race':pull('charRace').value,
+                'classes':{
+                  'multi':false,
+                  'class1':pull('charClass').value,
+                  'subclass1':'non yet',
+                  'level1':pull('charLevel').value, 
+                  
+                  // where I left off!!
+
+                },
+                'attr':{
+                  'strength':{
+                    'score': 10,
+                    'save':false,
+                  },
+                  'dexterity': {
+                    'score': 10,
+                    'save':false,
+                  },
+                  'constitution': {
+                    'score': 10,
+                    'save':false,
+                  },
+                  'intelligence': {
+                    'score': 10,
+                    'save':false,
+                  },
+                  'wisdom':{
+                    'score': 10,
+                    'save':false,
+                  },
+                  'charisma':{
+                    'score': 10,
+                    'save':false,
+                  },
+                },
+                'skills': {
+                  'acrobatics':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'strength'
+                  },
+                  'animal handling':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'wisdom'
+                  },
+                  'arcana':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'intelligence'
+                  },
+                  'athletics':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'strength'
+                  },
+                  'deception':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'charisma'
+                  },
+                  'history':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'intelligence'
+                  },
+                  'Insight':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'wisdom'
+                  },
+                  'Intimidation':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'charisma'
+                  },
+                  'Medicine':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'wisdom'
+                  },
+                  'Nature':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'intelligence'
+                  },
+                  'Perception':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'wisdom'
+                  },
+                  'Performance':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'charisma'
+                  },
+                  'Persuasion':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'charisma'
+                  },
+                  'Religion':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'intelligence'
+                  },
+                  'Sleight of hand':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'dexterity'
+                  },
+                  'Stealth':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'dexterity'
+                  },
+                  'Survival':{
+                    'pro':false,
+                    'expert':false,
+                    'attr':'wisdom'
+                  },
+                },
+                'ac':15,
+                'speed':30,
+                'background':'sailor',
+                'alignment':'Chaotic Good',
+                'experience':4000,
+                'hitDice':[10],
+                'attacks':[
+                  {
+                    'name':'Longsword',
+                    'toHit':4,
+                    'dmg':{'bonus':2, 'dmgDice':'d8','dmgDiceNum':1},
+                    'notes':'nothing special about this'
+                  },
+                  {
+                    'name':'Handaxe',
+                    'toHit':4,
+                    'dmg':{'bonus':2, 'dmgDice':'d6','dmgDiceNum':2},
+                    'notes':'this a handaxe.  Like Gimli\'s'
+                  },
+                  {
+                    'name':'Longbow',
+                    'toHit':2,
+                    'dmg':{'bonus':1, 'dmgDice':'d8','dmgDiceNum':2},
+                    'notes':'Short/Long = 120/300'
+                  }
+                ],
+                'attackNotes':'Nothing to note here',
+                'deathSaves':[1,2],
+                'Other Proficiencies':{
+                  'langs':['Common','Elvish'],
+                  'instruments':[],
+                  'tools':['Brewer\'s', 'Carpenter\'s'],
+                  'other':['Land Vehicles']
+                },
+                'appearance':{
+                  'age':'20',
+                  'height':'6ft 2in',
+                  'weight':'220lbs',
+                  'eyes':'blue',
+                  'skin':'peachy',
+                  'hair':'Dirty Blonde with a Scrappy Beard'
+                },'spellcasting':{'attr':'none','spellSV':'spellAtkBonus','spellsKNOW':['Nothing Yet']},
+            }}
+        } 
+        
+        
 
         var characters = [];
         function listCharacters () {
@@ -251,7 +491,7 @@ function init () {
               var charList = snapshot;
               for(let key in charList) {
                 character = charList[key];
-                
+                characters[key] = character;
               }
             }
           })

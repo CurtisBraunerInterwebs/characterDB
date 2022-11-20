@@ -14,14 +14,18 @@
 <div class="charsheet container-fluid">
     <header class="container">
       <div class="row">
-        <section class="charname col-4">
+        <section class="charname col-4" id="charNameSection">
           <label for="charname">Character Name</label>
           <input name="charname" id="charName"/>
         </section>
         <section class="misc col-8">
           <ul class="list-group list-group-horizontal row-cols-3">
             <li class="list-group-item col">
-              <label for="classlevel">Class & Level</label><input name="classlevel" placeholder="Paladin 2" />
+              <div class="input-group"></div>
+              <span for="classlevel" class="input-group-text"> Class & Level</span>
+              <input name="class" placeholder="Paladin 2" id="charClass"  class="form-control" />
+              <input name="level" placeholder="Paladin 2" id="charLevel"  class="form-control" />
+            </div>
             </li>
             <li class="list-group-item col">
               <label for="background">Background</label><input name="background" placeholder="Acolyte" />
@@ -33,13 +37,16 @@
           <div class="w-100"></div>
           <ul class="list-group list-group-horizontal row-cols-3">
             <li class="list-group-item col">
-              <label for="race">Race</label><br><input name="race" placeholder="Half-elf" />
+              <label for="race">Race</label><br><input name="race" placeholder="Half-elf" id="charRace" />
             </li>
             <li class="list-group-item col">
-              <label for="alignment">Alignment</label><input name="alignment" placeholder="Lawful Good" />
+              <input name="testLoad" type="button" class="btn btn-primary" id="resetTest" value="Res"  >
+              <!-- <label for="alignment">Alignment</label>
+              <input name="alignment" placeholder="Lawful Good" id="alignment" /> -->
             </li>
             <li class="list-group-item">
-              <label for="experiencepoints">Experience Points</label><input name="experiencepoints" placeholder="3240" />
+              <input name="upload" type="button" class="btn btn-primary" id="uploadBtn" value="Upload Character"  >
+              <input type="button" class="btn btn-primary" id="testUpload" value="TEST UPLOAD"  >
             </li>
           </ul>
         </section>
