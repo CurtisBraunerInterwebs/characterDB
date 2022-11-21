@@ -21,32 +21,41 @@
         <section class="misc col-8">
           <ul class="list-group list-group-horizontal row-cols-3">
             <li class="list-group-item col">
-              <div class="input-group"></div>
-              <span for="classlevel" class="input-group-text"> Class & Level</span>
-              <input name="class" placeholder="Paladin 2" id="charClass"  class="form-control" />
-              <input name="level" placeholder="Paladin 2" id="charLevel"  class="form-control" />
-            </div>
+              <span for="classlevel" class="input-group-text">
+                  <div class="input-group-text">
+                    <form class="form-floating">
+                      <input type="text" class="form-control" id="charClass" placeholder="class" />
+                      <label for="charClass">Class</label>
+                    </form>
+                    <form class="form-floating">
+                      <input type="number" class="form-control" id="charLevel" placeholder="level" />
+                      <label for="charLevel">Level</label>
+                    </form>
+                  </div>
+              </span>
             </li>
             <li class="list-group-item col">
-              <label for="background">Background</label><input name="background" placeholder="Acolyte" />
+              <label for="background">Background</label><input name="background" placeholder="Acolyte" id="charBackground" class="form-control"/>
             </li>
             <li class="list-group-item col">
-              <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface">
+              <label for="playername">Player Name</label><input name="playername" placeholder="Player McPlayerface" id="charPlayerName" class="form-control" />
             </li>
           </ul>
           <div class="w-100"></div>
           <ul class="list-group list-group-horizontal row-cols-3">
             <li class="list-group-item col">
-              <label for="race">Race</label><br><input name="race" placeholder="Half-elf" id="charRace" />
+              <label for="race">Race</label><br><input name="race" placeholder="Half-elf" id="charRace" class="form-control" />
             </li>
             <li class="list-group-item col">
-              <input name="testLoad" type="button" class="btn btn-primary" id="resetTest" value="Res"  >
-              <!-- <label for="alignment">Alignment</label>
-              <input name="alignment" placeholder="Lawful Good" id="alignment" /> -->
+              <input name="testLoad" type="button" class="btn btn-primary" id="resetTest" value="Reset Sheet"  >
             </li>
             <li class="list-group-item">
-              <input name="upload" type="button" class="btn btn-primary" id="uploadBtn" value="Upload Character"  >
-              <input type="button" class="btn btn-primary" id="testUpload" value="TEST UPLOAD"  >
+              <div class="btn-group col-12" role="group" style="padding:.2rem;">
+                <span for="classlevel col-12" class="input-group-text">
+                  <input name="upload" type="button" class="btn btn-primary" id="uploadBtn" value="Upload"  >
+                  <input type="button" class="btn btn-primary" id="testUpload" value="TEST UPLOAD"  >
+                </span>
+              </div>
             </li>
           </ul>
         </section>
@@ -62,9 +71,9 @@
                   <div class="card-header">
                     Strength
                   </div>
-                  <div class="card-body">
-                    <h5 class="card-title" id="strCardMod"></h5>
-                    <input class="card-text attr-Num" id="strCardScore"></p>
+                  <div class="card-body input-group-text">
+                    <h5 class="card-title" id="strCardMod">+4</h5>
+                    <input class="card-text attr-Num" id="strCardScore">
                   </div>
                 </div>
                 <div class="card attr-card" id="dexCard">
@@ -73,7 +82,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="dexCardMod"></h5>
-                    <input class="card-text attr-Num" id="dexCardScore"></p>
+                    <input class="card-text attr-Num" id="dexCardScore">
                   </div>
                 </div>
                 <div class="card attr-card" id="conCard">
@@ -82,7 +91,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="conCardMod"></h5>
-                    <input class="card-text attr-Num" id="conCardScore"></p>
+                    <input class="card-text attr-Num" id="conCardScore">
                   </div>
                 </div>
                 <div class="card attr-card" id="intCard">
@@ -91,7 +100,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="intCardMod"></h5>
-                    <input class="card-text attr-Num" id="intCardScore"></p>
+                    <input class="card-text attr-Num" id="intCardScore">
                   </div>
                 </div>
                 <div class="card attr-card" id="wisCard">
@@ -100,7 +109,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="wizCardMod"></h5>
-                    <input class="card-text attr-Num" id="wizCardScore"></p>
+                    <input class="card-text attr-Num" id="wizCardScore">
                   </div>
                 </div>
                 <div class="card attr-card" id="chaCard">
@@ -109,7 +118,7 @@
                   </div>
                   <div class="card-body">
                     <h5 class="card-title" id="chaCardMod"></h5>
-                    <input class="card-text attr-Num" id="chaCardScore"></p>
+                    <input class="card-text attr-Num" id="chaCardScore">
                   </div>
                 </div>
               </div>
@@ -133,42 +142,44 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item strSvCard">
                       <div class="input-group" >
-                        <span class="svProChk input-group-text col-3"><input name="Strength-save-prof" type="checkbox" class="form-check-input "/></span>
+                        <span class="svProChk input-group-text col-3">
+                          <input name="Strength-save-prof" type="checkbox" class="form-check-input" id="strSvPro" />
+                        </span>
                         <!-- <div class="svMod "><input name="Strength-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9">Strength <span class="badge position-absolute end-0 bg-danger strSvMod">+2</span></span>
                       </div>
                     </li>
                     <li class="list-group-item dexSvCard">
                       <div class="input-group" >
-                        <div class="svProChk input-group-text col-3"><input name="Dexterity-save-prof" type="checkbox" class="form-check-input"/></div>
+                        <div class="svProChk input-group-text col-3"><input name="Dexterity-save-prof" type="checkbox" class="form-check-input" id="dexSvPro"/></div>
                         <!-- <div class="svMod "><input name="Dexterity-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9" for="Dexterity-save-prof">Dexterity <span class="badge position-absolute end-0 bg-danger dexSvMod">+2</span> </span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
-                        <div class="svProChk input-group-text col-3"><input name="Constitution-save-prof" type="checkbox" class="form-check-input "/></div>
+                        <div class="svProChk input-group-text col-3"><input name="Constitution-save-prof" type="checkbox" class="form-check-input" id="conSvPro" /></div>
                         <!-- <div class="svMod "><input name="Constitution-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9">Constitution <span class="badge position-absolute end-0 bg-danger conSvMod">+5</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
-                        <div class="svProChk input-group-text col-3"><input name="Intelligence-save-prof" type="checkbox" class="form-check-input "/></div>
+                        <div class="svProChk input-group-text col-3"><input name="Intelligence-save-prof" type="checkbox" class="form-check-input " id="intSvPro"/></div>
                         <!-- <div class="svMod "><input name="Intelligence-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9">Intelligence <span class="badge position-absolute end-0 bg-danger intSvMod ">+3</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
-                        <div class="svProChk input-group-text col-3"><input name="Wisdom-save-prof" type="checkbox" class="form-check-input" /></div>
+                        <div class="svProChk input-group-text col-3"><input name="Wisdom-save-prof" type="checkbox" class="form-check-input" id="wisSvPro" /></div>
                         <!-- <div class="svMod "><input name="Wisdom-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9">Wisdom <span class="badge position-absolute end-0 bg-danger wisSvMod">+2</span></span>
                       </div>
                     </li>
                     <li class="list-group-item">
                       <div class="input-group" >
-                        <div class="svProChk input-group-text col-3"><input name="Charisma-save-prof" type="checkbox" class="form-check-input "/></div>
+                        <div class="svProChk input-group-text col-3"><input name="Charisma-save-prof" type="checkbox" class="form-check-input " id="chaSvPro"/></div>
                         <!-- <div class="svMod "><input name="Charisma-save" placeholder="+0" type="text" class="form-control"/></div> -->
                         <span class="input-group-text col-9">Charisma <span class="badge position-absolute end-0 bg-danger chaSvMod">+4</span></span>
                       </div>
@@ -181,131 +192,504 @@
                     <ul class="list-group">
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Acro-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Acrobatics <span class="skill">(Dex)</span>
-                          <!-- <a class="btn" role="button"> -->
-                            <span class="btn badge bg-primary rounded-pill" id="acrobaticsMod" role="button">+0</span></span>
-                          <!-- </a>  -->
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="acroDrop" data-bs-toggle="dropdown" aria-expanded="false" name="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="acroDropPro" value="pro" name="acroDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="acroDropExp" value="exp" name="acroDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="acroDropNone" value="none" name="acroDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Acrobatics <span class="skill">(Dex)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="acrobaticsMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Animal-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Animal Handling <span class="skill">(Wis)</span>
-                          <span class="badge bg-primary rounded-pill" id="animalMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="athleticsDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="athleticsDropPro" value="pro" name="athleticsDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="athleticsDropExp" value="exp" name="athleticsDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="athleticsDropNone" value="none" name="athleticsDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms"> Athletics <span class="skill">(Str)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="athleticsMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Arcana-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Arcana <span class="skill">(Int)</span>
-                          <span class="badge bg-primary rounded-pill" id="arcanaMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="arcanaDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="arcanaDropPro" value="pro" name="arcanaDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="arcanaDropExp" value="exp" name="arcanaDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="arcanaDropNone" value="none" name="arcanaDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Arcana <span class="skill">(Int)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="arcanaMod" role="button">+0</span>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <span class="input-group-text colms col-12"> 
+                          <div class="btn-group">
+                            <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="animalDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><button class="dropdown-item skillProSelect" id="animalDropPro" value="pro" name="animalDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                Proficient
+                              </button></li>
+                              <li><button class="dropdown-item skillProSelect" id="animalDropExp" value="exp" name="animalDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                Expert
+                              </button></li>
+                              <li><button class="dropdown-divider" ></button></li>
+                              <li><button class="dropdown-item skillProSelect" id="animalDropNone" value="none" name="animalDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                Neither
+                              </button></li>
+                            </ul>
+                          </div>
+                          <span class="skill-name colms">Animal Hand <span class="skill">(Wis)</span></span>
+                          <span class="btn badge bg-primary rounded-pill" id="animalMod" role="button">+0</span>
+                        </span>
+                      </li>
+                      <li class="list-group-item">
+                        <span class="input-group-text colms col-12"> 
+                          <div class="btn-group">
+                            <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="deceptionDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><button class="dropdown-item skillProSelect" id="deceptionDropPro" value="pro" name="deceptionDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                Proficient
+                              </button></li>
+                              <li><button class="dropdown-item skillProSelect" id="deceptionDropExp" value="exp" name="deceptionDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                Expert
+                              </button></li>
+                              <li><button class="dropdown-divider" ></button></li>
+                              <li><button class="dropdown-item skillProSelect" id="deceptionDropNone" value="none" name="deceptionDrop" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                Neither
+                              </button></li>
+                            </ul>
+                          </div>
+                          <span class="skill-name colms">Deception <span class="skill">(Cha)</span></span>
+                          <span class="btn badge bg-primary rounded-pill" id="deceptionMod" role="button">+0</span>
+                        </span>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="input-group">
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="historyDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="historyDropPro" value="pro" name="historyDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="historyDropExp" value="exp" name="historyDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="historyDropNone" value="none" name="historyDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">History <span class="skill">(Int)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="historyMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Athletics-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Athletics <span class="skill">(Str)</span>
-                          <span class="badge bg-primary rounded-pill" id="athleticsMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="insightDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="insightDropPro" value="pro" name="insightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="insightDropExp" value="exp" name="insightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="insightDropNone" value="none" name="insightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Insight <span class="skill">(Wis)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="insightMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Deception -prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Deception <span class="skill">(Cha)</span>
-                          <span class="badge bg-primary rounded-pill" id="deceptionMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="intimDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="intimDropPro" value="pro" name="intimDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="intimDropExp" value="exp" name="intimDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="intimDropNone" value="none" name="intimDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Intimidation <span class="skill">(Cha)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="intimMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="History-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">History <span class="skill">(Int)</span>
-                          <span class="badge bg-primary rounded-pill" id="histoyMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="investigationDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="investigationDropPro" value="pro" name="investigationDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="investigationDropExp" value="exp" name="investigationDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="investigationDropNone" value="none" name="investigationDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Investigation <span class="skill">(Int)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="investigationMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Insight-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Insight <span class="skill">(Wis)</span>
-                          <span class="badge bg-primary rounded-pill" id="insightMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="medicineDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="medicineDropPro" value="pro" name="medicineDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="medicineDropExp" value="exp" name="medicineDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="medicineDropNone" value="none" name="medicineDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Medicine <span class="skill">(Wis)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="medicineMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Intim-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Intimidation <span class="skill">(Cha)</span>
-                          <span class="badge bg-primary rounded-pill" id="intimMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="natureDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="natureDropPro" value="pro" name="natureDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="natureDropExp" value="exp" name="natureDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="natureDropNone" value="none" name="natureDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Nature <span class="skill">(Int)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="natureMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Investigation-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Investigation  <span class="skill">(Int)</span>
-                          <span class="badge bg-primary rounded-pill" id="investigationMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="perceptDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="perceptDropPro" value="pro" name="perceptDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="perceptDropExp" value="exp" name="perceptDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="perceptDropNone" value="none" name="perceptDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Perception <span class="skill">(Wis)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="perceptMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Medicine-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Medicine  <span class="skill">(Wis)</span>
-                          <span class="badge bg-primary rounded-pill" id="medicineMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="perfDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="perfDropPro" value="pro" name="perfDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="perfDropExp" value="exp" name="perfDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="perfDropNone" value="none" name="perfDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Performance <span class="skill">(Cha)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="perfMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Nature-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Nature <span class="skill">(Int)</span>
-                          <span class="badge bg-primary rounded-pill" id="natureMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="persDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="persDropPro" value="pro" name="persDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="persDropExp" value="exp" name="persDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="persDropNone" value="none" name="persDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Persuasion <span class="skill">(Cha)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="persMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Perception-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Perception  <span class="skill">(Wis)</span>
-                          <span class="badge bg-primary rounded-pill" id="perceptMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="religionDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="religionDropPro" value="pro" name="religionDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="religionDropExp" value="exp" name="religionDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="religionDropNone" value="none" name="religionDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Religion <span class="skill">(Cha)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="religionMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Performance-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Performance  <span class="skill">(Cha)</span>
-                          <span class="badge bg-primary rounded-pill" id="perfMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="sleightDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="sleightDropPro" value="pro" name="sleightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="sleightDropExp" value="exp" name="sleightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="sleightDropNone" value="none" name="sleightDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Sleight <span class="skill">(Cha)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="sleightMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Persuasion-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Persuasion  <span class="skill">(Cha)</span>
-                          <span class="badge bg-primary rounded-pill" id="persMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="stealthDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="stealthDropPro" value="pro" name="stealthDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="stealthDropExp" value="exp" name="stealthDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="stealthDropNone" value="none" name="stealthDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Stealth <span class="skill">(Dex)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="stealthMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Religion-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Religion  <span class="skill">(Int)</span>
-                          <span class="badge bg-primary rounded-pill" id="religionMod">+0</span></span>
+                          <span class="input-group-text colms col-12"> 
+                            <div class="btn-group">
+                              <button type="button" class="btn bg-danger dropdown-toggle proButton badge" id="survivalDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>                              
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><button class="dropdown-item skillProSelect" id="survivalDropPro" value="pro" name="survivalDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> + <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+                                  Proficient
+                                </button></li>
+                                <li><button class="dropdown-item skillProSelect" id="survivalDropExp" value="exp" name="survivalDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16"> <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/> </svg>
+                                  Expert
+                                </button></li>
+                                <li><button class="dropdown-divider" ></button></li>
+                                <li><button class="dropdown-item skillProSelect" id="survivalDropNone" value="none" name="survivalDrop" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>  </svg>
+                                  Neither
+                                </button></li>
+                              </ul>
+                            </div>
+                            <span class="skill-name colms">Survival <span class="skill">(Wis)</span></span>
+                            <span class="btn badge bg-primary rounded-pill" id="survivalMod" role="button">+0</span>
+                          </span>
                         </div>
                       </li>
-                      <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Sleight of Hand-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Sleight of Hand <span class="skill">(Dex)</span>
-                          <span class="badge bg-primary rounded-pill" id="sleightMod">+0</span></span>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Stealth-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Stealth <span class="skill">(Dex)</span>
-                          <span class="badge bg-primary rounded-pill" id="stealthMod">+0</span></span>
-                        </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="input-group">
-                          <span class="input-group-text colms col-1.5"> <input name="Survival-prof" type="checkbox" class="form-check-input"/> </span>
-                          <span class="input-group-text skill-name colms col-10.5">Survival <span class="skill">(Wis)</span>
-                          <span class="badge bg-primary rounded-pill" id="survMod">+0</span></span>
-                        </div>
                       </li>
                     </ul>
                   </div>

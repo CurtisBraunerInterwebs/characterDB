@@ -14,6 +14,11 @@ textarea {
   padding: .2rem;
 }
 
+.proButton {
+  width: auto;
+  height: auto;
+}
+
 .charname {
   align-self: center;
   font-size: x-large;
@@ -45,6 +50,7 @@ textarea {
 
 .skills .list-group-item .colms {
   padding: .2rem;
+  /* max-height: 1rem; */
 }
 
 .skill-name {
