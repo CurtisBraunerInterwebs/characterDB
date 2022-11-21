@@ -308,12 +308,9 @@ function init () {
           console.log(drop + set);
           var setIcon;
           var skillName = drop.slice(0,drop.length - 4);
-          if (set == 'pro') {
-            setIcon = iconChecked; }
-          else if (set == 'exp') {
-            setIcon = iconCheckedFull;}     
-          else {
-            setIcon = iconClipboard;}
+          if (set == 'pro') { setIcon = iconChecked; }
+          else if (set == 'exp') { setIcon = iconCheckedFull;}     
+          else { setIcon = iconClipboard;}
           
           console.log(skillName);
 
@@ -602,11 +599,11 @@ function init () {
         var characters = [];
 
         function loadChar (char) {
-          get(ref(db, '/characters/'+char).then((snapshot) => {
+          get(ref(db, '/characters/'+char)).then((snapshot) => {
             if (snapshot.exists()) {
               console.log(snapshot.val);
             }
-          }));
+          });
         }
 
 
@@ -631,7 +628,7 @@ function init () {
 
         listCharacters();
 
-        //loadChar(characters[0]);
+        loadChar(characters[0]);
 
         function clickToRoll (id) {
           var elem = document.getElementById(id);
