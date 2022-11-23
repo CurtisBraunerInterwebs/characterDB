@@ -562,19 +562,22 @@ function init () {
                     'name':'Longsword',
                     'toHit':4,
                     'dmg':{'bonus':2, 'dmgDice':'d8','dmgDiceNum':1},
-                    'notes':'nothing special about this'
+                    'notes':'nothing special about this',
+                    'active':1
                   },
                   {
                     'name':'Handaxe',
                     'toHit':4,
                     'dmg':{'bonus':2, 'dmgDice':'d6','dmgDiceNum':2},
-                    'notes':'this a handaxe.  Like Gimli\'s'
+                    'notes':'this a handaxe.  Like Gimli\'s',
+                    'active':2
                   },
                   {
                     'name':'Longbow',
                     'toHit':2,
                     'dmg':{'bonus':1, 'dmgDice':'d8','dmgDiceNum':2},
-                    'notes':'Short/Long = 120/300'
+                    'notes':'Short/Long = 120/300',
+                    'active':3
                   }
                 ],
                 'attackNotes':'Nothing to note here',
@@ -606,6 +609,8 @@ function init () {
           });
         }
 
+        function setDiceRolls(){}
+
 
                 
 
@@ -630,9 +635,17 @@ function init () {
 
         loadChar(characters[0]);
 
-        function clickToRoll (id) {
-          var elem = document.getElementById(id);
+        function rollDice (name,diceNum,diceType,resultLoc) {
+          var rolls = [];
+          var rollTotal = name+'['+diceNum+'d'+diceType+'] = ';
+          for (let i=0; i<diceNum; i++) {
+            rolls[i] = Math.floor(Math.random() * diceType) + 1;
+            rollTotal += rolls[i]+', ';
+          }
+          console.log(rollTotal);
         }
+
+        rollDice('test',2,20);
 
        //ICONS       
       //  document.querySelectorAll('.clipboard').innerHTML = iconClipboard;
