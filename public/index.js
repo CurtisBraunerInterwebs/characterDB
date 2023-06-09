@@ -318,6 +318,8 @@ function init () {
           
         }
 
+        
+
         function tempUpload () {
           set(ref(db,'/character/'),{
             'temp':  testCharacter
